@@ -82,17 +82,17 @@ public class ClockDisplay
     private void updateDisplay()
     {
         int hour = hours.getValue();
-        String suffix;
+        String meridian;
         
         if (hour >= 12)
         {
-            suffix = "pm";
+            meridian = "pm";
             hour -= 12;
         }
         
         else
         {
-            suffix = "am";
+            meridian = "am";
         }
         
         if (hour == 0)
@@ -100,6 +100,6 @@ public class ClockDisplay
             hour = 12;
         }
         
-        displayString = hour + ":" + minutes.getDisplayValue() + suffix;
+        displayString = hour + ":" + minutes.getDisplayValue() + meridian;
     }
 }
