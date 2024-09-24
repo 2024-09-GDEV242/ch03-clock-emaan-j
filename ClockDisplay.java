@@ -28,7 +28,7 @@ public class ClockDisplay
      */
     public ClockDisplay()
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
         updateDisplay();
     }
@@ -40,7 +40,7 @@ public class ClockDisplay
      */
     public ClockDisplay(int hour, int minute)
     {
-        hours = new NumberDisplay(24);
+        hours = new NumberDisplay(12);
         minutes = new NumberDisplay(60);
         setTime(hour, minute);
     }
@@ -82,25 +82,6 @@ public class ClockDisplay
      */
     private void updateDisplay()
     {
-        int hour = hours.getValue();
-        String suffix;
-        
-        if (hour >= 12)
-        {
-            suffix = "pm";
-            hour -= 12;
-        }
-        
-        else
-        {
-            suffix = "am";
-        }
-        
-        if (hour == 0)
-        {
-            hour = 12;
-        }
-        
-        displayString = hour + ":" + minutes.getDisplayValue() + suffix;
+        displayString = hours.getDisplayValue() + ":" + minutes.getDisplayValue();
     }
 }
